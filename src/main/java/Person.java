@@ -5,6 +5,13 @@ public class Person {
     private int age;
     private String city;
 
+    public Person(String newName, String newLastName, int newAge, String newCity) {
+        this.name = newName;
+        this.lastName = newLastName;
+        this.age = newAge;
+        this.city = newCity;
+    }
+
     public String getName() {
         return name;
     }
@@ -22,7 +29,7 @@ public class Person {
     }
 
     public Boolean hasAge() {
-        return getAge() > 0;
+        return getAge() < 0;
     }
 
     public Boolean hasCity() {
@@ -38,9 +45,20 @@ public class Person {
     }
 
     public PersonBuilderImpl newChildrenBuilder() {
-        this.lastName = getLastName();
-        this.age = getAge();
-        this.city = getCity();
-        return new PersonBuilderImpl();
+        String childLastName = getLastName();
+        int childAge = getAge() - 20;
+        String childCity = getCity();
+
+        PersonBuilderImpl childPerson = new PersonBuilderImpl();
+        childPerson.setNewLastName(childLastName);
+        childPerson.setNewAge(childAge);
+        childPerson.setNewCity(childCity);
+
+        return childPerson;
+    }
+
+    @Override
+    public String toString() {
+        return "Имя: " + name + " Фамилия: " + lastName + " Возраст: " + age + " Город " + city;
     }
 }

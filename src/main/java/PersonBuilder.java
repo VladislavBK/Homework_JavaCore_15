@@ -1,8 +1,8 @@
 public interface PersonBuilder {
-    PersonBuilderImpl setName(String name);
-    PersonBuilderImpl setLastName(String lastName);
-    PersonBuilderImpl setAge(int age);
-    PersonBuilderImpl setCity(String city);
+    PersonBuilderImpl setNewName(String newName);
+    PersonBuilderImpl setNewLastName(String newLastName);
+    PersonBuilderImpl setNewAge(int newAge);
+    PersonBuilderImpl setNewCity(String newCity);
     Person build();
 
 }

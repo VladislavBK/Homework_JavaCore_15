@@ -1,34 +1,34 @@
 public class PersonBuilderImpl implements PersonBuilder {
 
-    public String name;
-    public String lastName;
-    public int age;
-    public String city;
+    public String newName;
+    public String newLastName;
+    public int newAge;
+    public String newCity;
 
     public PersonBuilderImpl() {
     }
     @Override
-    public PersonBuilderImpl setName(String name) {
-        this.name = name;
+    public PersonBuilderImpl setNewName(String newName) {
+        this.newName = newName;
         return this;
     }
     @Override
-    public PersonBuilderImpl setLastName(String lastName) {
-        this.lastName = lastName;
+    public PersonBuilderImpl setNewLastName(String newLastName) {
+        this.newLastName = newLastName;
         return this;
     }
     @Override
-    public PersonBuilderImpl setAge(int age) {
-        this.age = age;
+    public PersonBuilderImpl setNewAge(int newAge) {
+        this.newAge = newAge;
         return this;
     }
     @Override
-    public PersonBuilderImpl setCity(String city) {
-        this.city = city;
+    public PersonBuilderImpl setNewCity(String newCity) {
+        this.newCity = newCity;
         return this;
     }
     @Override
     public Person build() {
-        return new Person();
+        return new Person(newName, newLastName, newAge, newCity);
     }
 }
