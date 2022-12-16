@@ -29,7 +29,7 @@ public class Person {
     }
 
     public Boolean hasAge() {
-        return getAge() < 0;
+        return getAge() <= 0;
     }
 
     public Boolean hasCity() {

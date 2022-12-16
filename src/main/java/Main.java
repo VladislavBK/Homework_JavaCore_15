@@ -19,7 +19,7 @@ public class Main {
                     mom.getAge() == 0 ||
                     mom.hasCity();
             if (check) {
-                new PersonBuilderImpl().build();
+                throw new IllegalStateException("Заполните обязательные поля");
             }
         } catch (IllegalStateException e) {
             e.printStackTrace();
@@ -28,7 +28,7 @@ public class Main {
         try {
             boolean check = mom.hasAge();
             if (check) {
-                new PersonBuilderImpl().setNewAge(-100).build();
+                throw new IllegalArgumentException("Введите корректный возраст");
             }
         } catch (IllegalArgumentException e) {
             e.printStackTrace();

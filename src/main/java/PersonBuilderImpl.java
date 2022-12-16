@@ -31,4 +31,5 @@ public class PersonBuilderImpl implements PersonBuilder {
     public Person build() {
         return new Person(newName, newLastName, newAge, newCity);
     }
+
 }
