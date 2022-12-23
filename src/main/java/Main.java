@@ -12,26 +12,5 @@ public class Main {
                 .setNewName("Антошка")
                 .build();
         System.out.println("У " + mom + " есть сын, " + son);
-
-        try {
-            boolean check = mom.getName() == null ||
-                    mom.getLastName() == null ||
-                    mom.getAge() == 0 ||
-                    mom.hasCity();
-            if (check) {
-                throw new IllegalStateException("Заполните обязательные поля");
-            }
-        } catch (IllegalStateException e) {
-            e.printStackTrace();
-        }
-
-        try {
-            boolean check = mom.hasAge();
-            if (check) {
-                throw new IllegalArgumentException("Введите корректный возраст");
-            }
-        } catch (IllegalArgumentException e) {
-            e.printStackTrace();
-        }
     }
 }

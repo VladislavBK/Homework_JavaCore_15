@@ -29,6 +29,16 @@ public class PersonBuilderImpl implements PersonBuilder {
     }
     @Override
     public Person build() {
+        boolean check = newName == null || newLastName == null || newAge == 0 || newCity == null;
+        if (check) {
+            throw new IllegalStateException("Заполните обязательные поля");
+        }
+
+        boolean checkAge = newAge < 0;
+        if (checkAge) {
+            throw new IllegalArgumentException("Введите корректный возраст");
+        }
+
         return new Person(newName, newLastName, newAge, newCity);
     }
 
