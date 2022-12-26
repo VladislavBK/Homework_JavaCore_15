@@ -20,6 +20,10 @@ public class PersonBuilderImpl implements PersonBuilder {
     @Override
     public PersonBuilderImpl setNewAge(int newAge) {
         this.newAge = newAge;
+        boolean checkAge = this.newAge < 0;
+        if (checkAge) {
+            throw new IllegalArgumentException("Введите корректный возраст");
+        }
         return this;
     }
     @Override
@@ -33,12 +37,6 @@ public class PersonBuilderImpl implements PersonBuilder {
         if (check) {
             throw new IllegalStateException("Заполните обязательные поля");
         }
-
-        boolean checkAge = newAge < 0;
-        if (checkAge) {
-            throw new IllegalArgumentException("Введите корректный возраст");
-        }
-
         return new Person(newName, newLastName, newAge, newCity);
     }
 
